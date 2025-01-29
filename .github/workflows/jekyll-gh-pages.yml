@@ -25,16 +25,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'npm'
       
-      - name: Install pnpm
-        run: npm install -g pnpm
-      
-      - name: Install dependencies
-        run: pnpm install
+      - name: Install dependencies using npm
+        run: npm install
       
       - name: Build project
-        run: pnpm run build
+        run: npm run build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
