@@ -25,10 +25,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: false
       
       - name: Install dependencies using npm
-        run: npm install
+        run: npm ci || npm install --no-frozen-lockfile
       
       - name: Build project
         run: npm run build
